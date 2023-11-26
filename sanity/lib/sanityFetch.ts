@@ -29,6 +29,7 @@ export async function sanityFetch<QueryResponse>({
   return client
     .withConfig({ useCdn: false })
     .fetch<QueryResponse>(query, params, {
+    // is this might be where the posts are not updated, because they are force-cached
       cache: isDevelopment || isDraftMode ? undefined : "force-cache",
       ...(isDraftMode && {
         token: token,

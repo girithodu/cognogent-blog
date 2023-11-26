@@ -8,7 +8,6 @@ import PreviewProvider from "../../components/PreviewProvider";
 
 export default async function Home() {
   const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
-  console.log('data', posts);
   const isDraftMode = draftMode().isEnabled;
 
   if (isDraftMode && token) {
