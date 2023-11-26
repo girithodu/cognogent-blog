@@ -12,7 +12,16 @@ export default async function Home() {
 
   if (isDraftMode && token) {
     return (
-      <PreviewProvider token={token}>
+      <PreviewProvider
+        token={token}
+        fallback={
+          <div role="status">
+            <p className="text-center, text-lg, animate-pulse, text-[#F7AB0A]">
+              Loading Preview Data...
+            </p>
+          </div>
+        }
+      >
         <div>PREVIEW MODE</div>
         <PreviewPosts posts={posts} />
       </PreviewProvider>
@@ -21,4 +30,3 @@ export default async function Home() {
 
   return <Posts posts={posts} />;
 }
-
