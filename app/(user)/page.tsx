@@ -6,6 +6,8 @@ import { draftMode } from "next/headers";
 import PreviewPosts from "../../components/PreviewPosts";
 import PreviewProvider from "../../components/PreviewProvider";
 
+export const revalidate = 30;
+
 export default async function Home() {
   const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
   const isDraftMode = draftMode().isEnabled;
