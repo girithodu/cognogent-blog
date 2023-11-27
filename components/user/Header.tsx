@@ -18,7 +18,7 @@ const Header = () => {
         </Link>
       </div>
       <div >
-        <Link className="px-5 py-3 text-sm md:text-base bg-gray-800 text-[#2fa0a0] flex items-center rounded-full" href="https://cognogent.com/rfxgpt">Checkout my latest projects</Link>
+        <Link className="px-5 py-3 text-sm md:text-base bg-gray-800 text-[#2fa0a0] flex items-center rounded-full" href="http://github.com/girithodu">Checkout my latest projects</Link>
       </div>
     </header>
   );
