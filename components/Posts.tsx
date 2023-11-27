@@ -11,7 +11,6 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
       <div className=" grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16">
         {/* Post */}
         {posts.map((post) => {
-          console.log('Post Slug: ', post.slug);
           return (
             <ClientSideRoute
               key={post._id}

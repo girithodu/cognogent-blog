@@ -1,9 +1,4 @@
 import React from "react";
-type Props = {
-  params: {
-    slug: string;
-  };
-};
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
@@ -12,17 +7,34 @@ import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { RichTextComponent } from "../../../../components/RichTextComponents";
 
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export const revalidate = 60; // revalidate this page every 60 seconds
+export async function generateStaticParams() {
+  const query = groq `*[_type == "post"]{
+    slug
+  }`
+  const slugs = await client.fetch(query);
+  const slugRoutes = slugs.map((slug:any) => slug.slug.current);
+
+  return slugRoutes.map((slug:any)=> {
+    slug
+  })
+
+}
 const Post = async ({ params: { slug } }: Props) => {
-  console.log("SLUG ", slug);
+
   const query = groq`*[_type == 'post' && slug.current == $slug][0]{
     ...,
     author->,
     categories->
   }`;
-  console.log("Raw Query: ", query);
 
   const post = await client.fetch(query, { slug });
-  console.log("Fetched post:", post);
 
   return (
     <article className="px-10 pb-28">

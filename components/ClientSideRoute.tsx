@@ -10,7 +10,6 @@ const ClientSideRoute = ({
   route: string
 }) => {
   if(route){
-    console.log('ROUTE', route);
     return (
       <Link href={route}>
         {children}
