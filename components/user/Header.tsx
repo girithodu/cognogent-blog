@@ -14,7 +14,7 @@ const Header = () => {
             width={55}
             alt="Company Logo"
           />
-          <p className="text-2xl">Giri</p>
+          <p className="text-4xl font-mono">Blog</p>
         </Link>
       </div>
       <div >
