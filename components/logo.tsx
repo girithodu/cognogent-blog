@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-const BrandLogo = (props) => {
+const BrandLogo = (props: any) => {
   return (
     <div className="flex items-center space-x-2">
       <Image

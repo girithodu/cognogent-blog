@@ -3,7 +3,7 @@ import { Stack, Card, Flex, Text } from "@sanity/ui";
 import { Undo2 } from "lucide-react";
 import Link from "next/link";
 
-const CustomNavbar = (props) => {
+const CustomNavbar = (props:any) => {
   return (
     <Stack className="flex justify-start bg-black ">
       <div className="flex p-2 ml-2">

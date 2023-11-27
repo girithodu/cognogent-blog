@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:space-x-5 justify-between font-bold px-10 mb-10 ">
       <div>
-        <h1 className="text-7xl">Cognogent's Daily Blog</h1>
+      <h1 className="text-7xl">Cognogent&apos;s Daily Blog</h1>
         <h2 className="mt-5 md:mt-2">
           Welcome to{" "}
           <span className=" underline decoration-[#2fa0a0] decoration-4">
