@@ -7,9 +7,9 @@ const CustomNavbar = (props: any) => {
   return (
     <Stack className="flex justify-start bg-black ">
       <div className="flex p-2 ml-2">
-        <Link href="/" className="mr-2">
+        <Link href="/" className="mr-2 flex gap-2">
           <Undo2 size={20} color="#2fa0a0" strokeWidth={1.5} />
-          <p>Go to Website</p>
+          <p className="text-white">Go to Website</p>
         </Link>
       </div>
       <>{props.renderDefault(props)}</>
