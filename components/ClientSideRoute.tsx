@@ -9,10 +9,15 @@ const ClientSideRoute = ({
   children: React.ReactNode, 
   route: string
 }) => {
-  return (
-    <Link href={route}>
-      {children}
-    </Link>
-  )
+  if(route){
+    console.log('ROUTE', route);
+    return (
+      <Link href={route}>
+        {children}
+      </Link>
+    )
+  } else {
+    return null;
+  }
 }
 export default ClientSideRoute;
