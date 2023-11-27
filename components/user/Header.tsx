@@ -6,17 +6,19 @@ const Header = () => {
   return (
     <header className="flex items-center justify-between px-10 py-5 space-x-2 font-bold">
       <div className="flex items-center space-x-2">
-        <Link href="/">
+        <Link href="/" className="flex gap-2 items-center">
           <Image
-            src="/Cognogent_Stacked-with-Tagline-no-fill copy-No-Tag-v3-no-dots-sized copy.png"
-            height={205}
-            width={205}
+            className="object-contain rounded-lg"
+            src="/face.jpg"
+            height={55}
+            width={55}
             alt="Company Logo"
           />
+          <p className="text-2xl">Giri</p>
         </Link>
       </div>
       <div >
-        <Link className="px-5 py-3 text-sm md:text-base bg-gray-800 text-[#2fa0a0] flex items-center rounded-full" href="https://cognogent.com/rfxgpt">Checkout our latest AI product RFX AI</Link>
+        <Link className="px-5 py-3 text-sm md:text-base bg-gray-800 text-[#2fa0a0] flex items-center rounded-full" href="https://cognogent.com/rfxgpt">Checkout my latest projects</Link>
       </div>
     </header>
   );

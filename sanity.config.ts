@@ -11,7 +11,7 @@ import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schema } from "./sanity/schema";
 import { myTheme } from "./theme";
 import CustomNavbar from "./components/navbar";
-import BrandLogo from "./components/logo";
+import BrandLogo from "./components/BrandLogo";
 import { getDefaultDocumentNode } from "./structure";
 
 export default defineConfig({
