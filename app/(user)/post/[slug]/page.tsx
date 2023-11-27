@@ -16,19 +16,17 @@ type Props = {
 export const revalidate = 30; // revalidate this page every 60 seconds
 
 export async function generateStaticParams() {
-  const query = groq `*[_type == "post"]{
+  const query = groq`*[_type == "post"]{
     slug
-  }`
+  }`;
   const slugs = await client.fetch(query);
-  const slugRoutes = slugs.map((slug:any) => slug.slug.current);
+  const slugRoutes = slugs.map((slug: any) => slug.slug.current);
 
-  return slugRoutes.map((slug:any)=> {
-    slug
-  })
-
+  return slugRoutes.map((slug: any) => {
+    slug;
+  });
 }
 const Post = async ({ params: { slug } }: Props) => {
-
   const query = groq`*[_type == 'post' && slug.current == $slug][0]{
     ...,
     author->,
@@ -84,8 +82,13 @@ const Post = async ({ params: { slug } }: Props) => {
               )}
               {post.categories && (
                 <div className="flex items-center justify-end mt-auto space-x-2">
-                  {post.categories.map((category:any) => {
-                    <p key={category.id} className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-semibold mt-4">{category.title}</p>;
+                  {post.categories.map((category: any) => {
+                    <p
+                      key={category.id}
+                      className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-semibold mt-4"
+                    >
+                      {category.title}
+                    </p>;
                   })}
                 </div>
               )}
@@ -93,7 +96,9 @@ const Post = async ({ params: { slug } }: Props) => {
           </section>
         </div>
       </section>
-      <PortableText value={post.body} components={RichTextComponent} />
+      <div className="text-lg"> 
+        <PortableText value={post.body} components={RichTextComponent} />
+      </div>
     </article>
   );
 };
