@@ -8,6 +8,9 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
+import { PortableText } from "@portabletext/react";
+import Link from "next/link";
+import { RichTextComponent } from "../../../../components/RichTextComponents";
 
 const Post = async ({ params: { slug } }: Props) => {
   console.log("SLUG ", slug);
@@ -77,6 +80,7 @@ const Post = async ({ params: { slug } }: Props) => {
           </section>
         </div>
       </section>
+      <PortableText value={post.body} components={RichTextComponent} />
     </article>
   );
 };
