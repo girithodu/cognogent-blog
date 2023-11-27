@@ -1,8 +1,6 @@
-import Link from "next/link";
 import type { SanityDocument } from "@sanity/client";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
-import { Divide } from "lucide-react";
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import ClientSideRoute from "./ClientSideRoute";
 
@@ -21,8 +19,9 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
               <div className="flex flex-col group cursor-pointer mb-10 ">
                 <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
                   <Image
+                    className=" object-cover object center"
                     src={urlForImage(post.mainImage).url()}
-                    alt="logo"
+                    alt={post.author.name}
                     loading="lazy"
                     fill
                   />
@@ -38,7 +37,7 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
                   </div>
                   <div className="flex flex-col md:flex-row gap-y-2 md: gap-x-2 items-center">
                     {post.categories &&
-                      post.categories.map((category) => {
+                      post.categories.map((category:any) => {
                         return (
                           <div
                             className="bg-[#F7Ab0A] text-center rounded-full text-sm font-semibold px-3 text-black"
@@ -65,7 +64,7 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
                     technology to inspiring travel adventures, we cover a wide
                     range of topics to keep you informed and entertained. Dive
                     into a collection of well-crafted content, written by our
-                    team of passionate writers. Whether you're a tech
+                    team of passionate writers. Whether youre a tech
                     enthusiast, a travel buff, or simply love a good story,
                     [Your Blog Name] has something for everyone. Join us on a
                     journey of discovery and stay tuned for regular updates that

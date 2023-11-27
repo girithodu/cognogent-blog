@@ -11,7 +11,6 @@ export default function PreviewPosts({
   posts: SanityDocument[];
 }) {
   const [data] = useLiveQuery(posts, postsQuery);
-  console.log('Preview mode  ', data);
 
   return <Posts posts={data} />;
 }
