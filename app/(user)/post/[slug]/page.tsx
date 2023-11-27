@@ -13,7 +13,8 @@ type Props = {
   };
 };
 
-export const revalidate = 60; // revalidate this page every 60 seconds
+export const revalidate = 30; // revalidate this page every 60 seconds
+
 export async function generateStaticParams() {
   const query = groq `*[_type == "post"]{
     slug
