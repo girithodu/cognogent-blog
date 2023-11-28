@@ -36,7 +36,7 @@ const Post = async ({ params: { slug } }: Props) => {
   const post = await client.fetch(query, { slug });
 
   return (
-    <article className="px-10 pb-28">
+    <article className="px-10 pb-28 mx-auto max-w-4xl">
       <section className="space-y-2 border border-primary text-white mb-10">
         <div className="relative min-h-56 flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
@@ -96,7 +96,7 @@ const Post = async ({ params: { slug } }: Props) => {
           </section>
         </div>
       </section>
-      <div className="text-lg"> 
+      <div className="text-md text-[#404040]"> 
         <PortableText value={post.body} components={RichTextComponent} />
       </div>
     </article>
