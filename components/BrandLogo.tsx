@@ -4,11 +4,11 @@ const BrandLogo = (props: any) => {
   return (
     <div className="flex items-center space-x-2">
       <Image
-        className="rounded-full object-cover "
-        src="/Cognogent_Stacked-with-Tagline-no-fill copy-No-Tag-v3-no-dots-sized copy.png"
-        width={200}
-        height={200}
-        alt="Cognogent-Logo"
+        className="rounded-lg object-cover "
+        src="/face.jpg"
+        width={50}
+        height={50}
+        alt="Personal-Logo"
       />
       <>{props.renderDefault(props)}</>
     </div>

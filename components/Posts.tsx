@@ -6,7 +6,7 @@ import ClientSideRoute from "./ClientSideRoute";
 
 export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
   return (
-    <div>
+    <div className="max-w-5xl mx-auto">
       <hr className=" border-primary mb-10" />
       <div className=" grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16">
         {/* Post */}
